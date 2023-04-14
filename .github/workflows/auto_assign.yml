@@ -1,0 +1,31 @@
+# Name Action
+name: 'Auto Assign'
+# push fork 
+# Flux de travail  Action qui s'active à chaque fois que quelqu'un push.
+on: 
+  push:
+# pull_request_target si vous souhaitez activer l'action d'attribution automatique lors de l'ouverture de demandes d'extraction à partir de référentiels fork ou de bots tels que Dependabot.
+#   pull_request:
+#     types: [opened, ready_for_review]
+# Le job de l'action 
+jobs: 
+#   c'est le coureur de l'exécution d'un conteneur  sur le paramètre de base github le fait automatiquement 
+#     assign-milestone:
+#     runs-on: macos-12
+  steps:
+    - name: Auto Assign Action
+      uses: kentaro-m/auto-assign-action@v1.2.5
+        env : 
+          DEFAULT_BRANCH : main
+        
+        # Set to true to add reviewers to pull requests
+        addReviewers: true
+
+        # Set to true to add assignees to pull requests
+        addAssignees: true
+        
+        reviewers:
+          - /R0ulito
+
+        permissions:
+          pull-requests: write
