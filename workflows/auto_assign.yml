@@ -25,7 +25,7 @@ jobs:
         addAssignees: true
         
         reviewers:
-          - pseudo github
+          - /R0ulito
 
         permissions:
           pull-requests: write
